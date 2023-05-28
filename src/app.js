@@ -1,25 +1,28 @@
+function formatDate(timestamp) {
+    let date = new Date(timestamp);
+    let hour = date.getHours();
+    let min = date.getMinutes();
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let day = days[date.getDay()];
+   
+    return `${day} ${hour}:${min}`;   
+}
+
 function showTemp(response) {
-    console.log(response);
-    let now = new Date();
     let tempElement = document.querySelector("#grades");
     let cityElement = document.querySelector("#city");
-    let hourElement = document.querySelector("#hour");
-    let minElement = document.querySelector("#minutes");
-    let days = ["Sunday", "Monday", "Thursday", "Wednesday", "Friday", "Saturday"];
-    let dayElement = document.querySelector("#day");
     let descElement = document.querySelector("#description");
+    let dateElement = document.querySelector("#date");
 
     tempElement.innerHTML = Math.round(response.data.temperature.current);
     cityElement.innerHTML = response.data.city;
-    hourElement.innerHTML = now.getHours();
-    minElement.innerHTML = now.getMinutes();
-    dayElement.innerHTML = days[now.getDay()];
     descElement.innerHTML = response.data.condition.description;
+    dateElement.innerHTML = formatDate(response.data.time * 1000);
+
 }
 
 let apiKey = "a5c6f5daeaa8d396de43ot341b40480b";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Madrid&key=${apiKey}&units=metric`;
-
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Paris&key=${apiKey}&units=metric`;
 console.log(apiUrl);
 
 axios.get(apiUrl).then(showTemp);
