@@ -9,7 +9,6 @@ function formatDate(timestamp) {
 }
 
 function showTemp(response) {
-    console.log(response.data);
     let tempElement = document.querySelector("#grades");
     let cityElement = document.querySelector("#city");
     let descElement = document.querySelector("#description");
