@@ -11,25 +11,34 @@
           integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" 
           crossorigin="anonymous">
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" 
+          integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer"></script>
+    
     <link rel="stylesheet" href="src/style.css">
 
 </head>
 <body>
     <div class="container">
         <div class="row time" id="first-row">
-            <div class="col-8">Sunday 10:34</div>
+            <div class="col-8">
+                <span id="day">Monday</span> 
+                <span id="hour"></span>:<span id="minutes"></span>
+            </div>
             <div class="col-4">Next</div>
         </div>
 
         <div class="row">
             <div class="col-4">
-               <span id="grades">16°</span> 
+               <span id="grades"></span>
+               <span id="simbol">°</span> 
                <span class="units">
                    C |
                    <a href="#">F</a>
                </span>
                </br>
-               New York
+               <span id="city"></span>
             </div>
 
            <div class="col-4">
