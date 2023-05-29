@@ -22,6 +22,8 @@ function showTemp(response) {
     let descElement = document.querySelector("#description");
     let dateElement = document.querySelector("#date");
     let iconElement = document.querySelector("#icon");
+    let speedElement = document.querySelector("#speed");
+    let humidityElement = document.querySelector("#humidity");
 
     celsiusTemp = response.data.temperature.current;
 
@@ -31,6 +33,8 @@ function showTemp(response) {
     dateElement.innerHTML = formatDate(response.data.time * 1000);
     iconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
     iconElement.setAttribute("alt", response.data.condition.description);
+    speedElement.innerHTML = Math.round(response.data.wind.speed);
+    humidityElement.innerHTML = Math.round(response.data.temperature.humidity);
 }
 
 function search(city) {
