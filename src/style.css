@@ -16,13 +16,17 @@ img {
     padding-bottom: 6px;
 }
 
+small {
+    display: block;
+    text-align: center ;
+}
+
 .container {
     max-width: 500px;
     margin: 150px auto;
     border: 1px solid #ececec;
     border-radius: 10px;
 }
-
 
 .row{
     padding-top: 20px;
