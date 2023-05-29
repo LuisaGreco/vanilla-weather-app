@@ -4,8 +4,12 @@ body{
 }
 
 a {
-    text-decoration: none;
-    color: #9fd3c7;
+   text-decoration: none;
+   color: #9fd3c7;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 img {
@@ -61,4 +65,10 @@ img {
     border-radius: 30px 30px;
     padding: 5px 15px;
     margin-top: 2px;
+}
+
+#weather-temp .active {
+    color:  #142d4c;
+    cursor: default;
+    text-decoration: none;
 }

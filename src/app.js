@@ -23,7 +23,9 @@ function showTemp(response) {
     let dateElement = document.querySelector("#date");
     let iconElement = document.querySelector("#icon");
 
-    tempElement.innerHTML = Math.round(response.data.temperature.current);
+    celsiusTemp = response.data.temperature.current;
+
+    tempElement.innerHTML = Math.round(celsiusTemp);
     cityElement.innerHTML = response.data.city;
     descElement.innerHTML = response.data.condition.description;
     dateElement.innerHTML = formatDate(response.data.time * 1000);
@@ -45,7 +47,38 @@ function handleSubmit(event) {
     search(cityInput.value);
 }
 
-search("New York");
+function fahrConversion(event) {
+    event.preventDefault();
+    
+    celsiusLink.classList.remove("active");
+    fahrLink.classList.add("active");
+
+    let fahrTemp = (celsiusTemp * 9 / 5) + 32;
+    let gradesElement = document.querySelector("#grades");
+    gradesElement.innerHTML = Math.round(fahrTemp);
+
+}
+
+function celsiusConversion(event) {
+    event.preventDefault();
+
+    celsiusLink.classList.add("active");
+    fahrLink.classList.remove("active");
+
+    let gradesElement = document.querySelector("#grades");
+    gradesElement.innerHTML = Math.round(celsiusTemp);
+
+}
+
+let celsiusTemp = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit); 
+
+let fahrLink = document.querySelector("#fahr-link");
+fahrLink.addEventListener("click", fahrConversion);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", celsiusConversion);
+
+search("Turin");
