@@ -52,3 +52,13 @@ img {
 #icon {
     width: 45%;
 }
+
+#searching-button {
+    background-color: #385170;
+    color: #f1f1f1;
+    font-weight: 490;
+    border: 0;
+    border-radius: 30px 30px;
+    padding: 5px 15px;
+    margin-top: 2px;
+}

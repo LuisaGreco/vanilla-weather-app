@@ -49,10 +49,17 @@
            <div class="col-4"></div>
        </div>
 
-        <div class="row">
-            <div class="col-8">Change city</div>
-            <div class="col-4">Button</div>
-        </div>
+       <form id="search-form">
+         <div class="row">
+            <div class="col-8">
+               <input type="search" placeholder="Change the city..." class="form-control" id="city-input" autocomplete="off"/>
+            </div>
+            <div class="col-4">
+             <input type="submit" value="Search" class="btn btn-primary" id="searching-button"/>
+            </div>
+         </div>
+       </form>
+       
     </div>
     <script src="src/app.js"></script>
 </body>
