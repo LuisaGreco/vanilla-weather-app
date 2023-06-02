@@ -30,33 +30,96 @@
 
         <div class="row" id="weather-temp">
             <div class="col-4">
-               <span id="grades"></span>
-               <span id="simbol">°</span> 
-               <span class="units">
+                <div class="main-temp">
+                 <span id="grades"></span>
+                 <span id="simbol">°</span> 
+                 <span class="units">
                    <a href="#" id="celsius-link" class="active">C</a> |
                    <a href="#" id="fahr-link">F</a>
-               </span>
-               </br>
-               <span id="city"></span>
+                 </span>
+                 </br>
+                 <span id="city"></span>
+                </div>
+
+                <div class="other-info">
+                    humidity: <span id="humidity"></span> % 
+                </div>
             </div>
 
            <div class="col-4">
               <img src="" alt="" id="icon"/>
-              </br>
+             
               <span id="description"></span>
+
+              <div class="other-info">
+                wind speed: <span id="speed"></span> km/h
+              </div>           
            </div>
         
-           <div class="col-4"></div>
-       </div>
+           <div class="col-4 forecast">
+            <ul class="forecast-section">
+                <li>         
+                    <span class="forecast-day">
+                        Sat
+                    </span>
 
-       <div class="row" id="other-info">
-           <div class="col-4">
-              humidity: <span id="humidity"></span> %
+                    <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png" class="forecast-icon"/>
+
+                    <span class="forecast-temp">
+                        <span class="forecast-temp-max">21°</span>
+                        <span class="forecast-temp-min">15°</span>                                              
+                    </span>
+                </li>
+                <li>         
+                    <span class="forecast-day">
+                        Sat
+                    </span>
+
+                    <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png" class="forecast-icon"/>
+
+                    <span class="forecast-temp">
+                        <span class="forecast-temp-max">21°</span>
+                        <span class="forecast-temp-min">15°</span>                                              
+                    </span>
+                </li>
+                <li>         
+                    <span class="forecast-day">
+                        Sat
+                    </span>
+
+                    <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png" class="forecast-icon"/>
+
+                    <span class="forecast-temp">
+                        <span class="forecast-temp-max">21°</span>
+                        <span class="forecast-temp-min">15°</span>                                              
+                    </span>
+                </li>
+                <li>         
+                    <span class="forecast-day">
+                        Sat
+                    </span>
+
+                    <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png" class="forecast-icon"/>
+
+                    <span class="forecast-temp">
+                        <span class="forecast-temp-max">21°</span>
+                        <span class="forecast-temp-min">15°</span>                                              
+                    </span>
+                </li>
+                <li>         
+                    <span class="forecast-day">
+                        Sat
+                    </span>
+
+                    <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png" class="forecast-icon"/>
+
+                    <span class="forecast-temp">
+                        <span class="forecast-temp-max">21°</span>
+                        <span class="forecast-temp-min">15°</span>                                              
+                    </span>
+                </li>
+            </ul>
            </div>
-           <div class="col-4">
-              wind speed: <span id="speed"></span> km/h
-           </div>
-           <div class="col-4"></div>
        </div>
 
        <form id="search-form">

@@ -14,11 +14,20 @@ a:hover {
 
 img {
     padding-bottom: 6px;
+    padding-bottom: 0;
 }
 
 small {
     display: block;
     text-align: center ;
+}
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    list-style: none;
 }
 
 .container {
@@ -34,7 +43,46 @@ small {
     text-align: center;
 }
 
+.main-temp {
+    padding-top: 24px;
+}
+
 .units {
+    font-weight: bold;
+}
+
+.other-info {
+    padding-top: 0;
+    font-size: 10pt;
+    color: #385170;
+}
+
+.forecast-section {
+    margin-bottom: 0;
+}
+
+.forecast {
+    padding-left: 0;
+}
+
+.forecast-icon {
+    width: 35px;
+}
+
+.forecast-day {
+    font-size: 10pt;
+}
+
+.forecast-temp {
+    padding-left: 9px;
+}
+
+.forecast-temp-min {
+    font-size: 10pt;
+}
+
+.forecast-temp-max {
+    font-size: 10pt;
     font-weight: bold;
 }
 
@@ -44,12 +92,6 @@ small {
     padding-bottom: 0;
     font-size: 12pt;
     font-weight: bold;
-    color: #385170;
-}
-
-#other-info {
-    padding-top: 0;
-    font-size: 10pt;
     color: #385170;
 }
 
@@ -64,7 +106,10 @@ small {
 }
 
 #icon {
-    width: 45%;
+    display: block;
+    margin: 0 auto;
+    padding-top: 5px;
+    width: 62%;
 }
 
 #searching-button {
