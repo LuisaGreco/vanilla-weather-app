@@ -72,7 +72,7 @@ function showTemp(response) {
     let speedElement = document.querySelector("#speed");
     let humidityElement = document.querySelector("#humidity");
 
-    celsiusTemp = response.data.temperature.current;
+    let celsiusTemp = response.data.temperature.current;
 
     tempElement.innerHTML = Math.round(celsiusTemp);
     cityElement.innerHTML = response.data.city;
@@ -100,7 +100,13 @@ function handleSubmit(event) {
     search(cityInput.value);
 }
 
-function fahrConversion(event) {
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit); 
+
+search("Turin");
+
+
+/*function fahrConversion(event) {
     event.preventDefault();
     
     celsiusLink.classList.remove("active");
@@ -123,17 +129,10 @@ function celsiusConversion(event) {
 
 }
 
-let celsiusTemp = null;
-
-
-
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit); 
+let celsiusTemp = null; 
 
 let fahrLink = document.querySelector("#fahr-link");
 fahrLink.addEventListener("click", fahrConversion);
 
 let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", celsiusConversion);
-
-search("Turin");
+celsiusLink.addEventListener("click", celsiusConversion);*/
