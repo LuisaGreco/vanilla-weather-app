@@ -16,7 +16,8 @@ function formatDate(timestamp) {
     return `${day} ${hour}:${min}`;   
 }
 
-function displayForecast() {
+function displayForecast(response) {
+    console.log(response.data.daily);
     let forecastElement = document.querySelector("#forecast");
     let days = ["Mon", "Thu", "Wed", "Tue", "Fri"];
     let forecastHTML= "";
@@ -42,6 +43,14 @@ function displayForecast() {
    forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(response) {
+    let apiKey = "a5c6f5daeaa8d396de43ot341b40480b"; 
+    let query = response.data.city;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${query}&key=${apiKey}`;
+
+    axios.get(apiUrl).then(displayForecast);     
+}
+
 function showTemp(response) {
     let tempElement = document.querySelector("#grades");
     let cityElement = document.querySelector("#city");
@@ -61,6 +70,8 @@ function showTemp(response) {
     iconElement.setAttribute("alt", response.data.condition.description);
     speedElement.innerHTML = Math.round(response.data.wind.speed);
     humidityElement.innerHTML = Math.round(response.data.temperature.humidity);
+
+    getForecast(response);
 }
 
 function search(city) {
@@ -114,5 +125,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", celsiusConversion);
 
 search("Turin");
-
-displayForecast();
