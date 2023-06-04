@@ -16,29 +16,41 @@ function formatDate(timestamp) {
     return `${day} ${hour}:${min}`;   
 }
 
+function forecastFormatDay(timestamp) {
+    let date = new Date(timestamp + 1000);
+    let day = date.getDay();
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+    return days[day];
+
+}
+
 function displayForecast(response) {
-    console.log(response.data.daily);
+    let forecast = response.data.daily;
+   
     let forecastElement = document.querySelector("#forecast");
-    let days = ["Mon", "Thu", "Wed", "Tue", "Fri"];
     let forecastHTML= "";
 
-    days.forEach(function(day) {
+    forecast.forEach(function(forecastDay, index) {
+      if (index < 5) {
       forecastHTML = forecastHTML + 
         `<ul class="forecast-section">
             <li>         
                <span class="forecast-day">
-                  ${day}
+                  ${forecastFormatDay(forecastDay.time)}
                </span>
-
-               <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png" class="forecast-icon"/>
+        
+               <img src= ${forecastDay.condition.icon_url}  alt="${forecastDay.condition.icon}" class="forecast-icon"/>
 
                <span class="forecast-temp">
-                 <span class="forecast-temp-max">21°</span>
-                 <span class="forecast-temp-min">15°</span>                                              
+                 <span class="forecast-temp-max">${Math.round(forecastDay.temperature.maximum)}°</span>
+                 <span class="forecast-temp-min">${Math.round(forecastDay.temperature.minimum)}°</span>                                              
                </span>
             </li>
-        </ul>`;    
+        </ul>`;
+       }    
     });
+     
 
    forecastElement.innerHTML = forecastHTML;
 }
