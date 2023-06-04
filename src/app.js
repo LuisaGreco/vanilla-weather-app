@@ -16,6 +16,32 @@ function formatDate(timestamp) {
     return `${day} ${hour}:${min}`;   
 }
 
+function displayForecast() {
+    let forecastElement = document.querySelector("#forecast");
+    let days = ["Mon", "Thu", "Wed", "Tue", "Fri"];
+    let forecastHTML= "";
+
+    days.forEach(function(day) {
+      forecastHTML = forecastHTML + 
+        `<ul class="forecast-section">
+            <li>         
+               <span class="forecast-day">
+                  ${day}
+               </span>
+
+               <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png" class="forecast-icon"/>
+
+               <span class="forecast-temp">
+                 <span class="forecast-temp-max">21°</span>
+                 <span class="forecast-temp-min">15°</span>                                              
+               </span>
+            </li>
+        </ul>`;    
+    });
+
+   forecastElement.innerHTML = forecastHTML;
+}
+
 function showTemp(response) {
     let tempElement = document.querySelector("#grades");
     let cityElement = document.querySelector("#city");
@@ -76,6 +102,8 @@ function celsiusConversion(event) {
 
 let celsiusTemp = null;
 
+
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit); 
 
@@ -86,3 +114,5 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", celsiusConversion);
 
 search("Turin");
+
+displayForecast();
