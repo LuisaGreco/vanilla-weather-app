@@ -17,7 +17,7 @@ function formatDate(timestamp) {
 }
 
 function forecastFormatDay(timestamp) {
-    let date = new Date(timestamp + 1000);
+    let date = new Date(timestamp * 1000);
     let day = date.getDay();
     let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -27,6 +27,7 @@ function forecastFormatDay(timestamp) {
 
 function displayForecast(response) {
     let forecast = response.data.daily;
+    console.log(forecast);
    
     let forecastElement = document.querySelector("#forecast");
     let forecastHTML= "";
